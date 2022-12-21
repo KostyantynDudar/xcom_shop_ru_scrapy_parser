@@ -11,7 +11,7 @@ class QuotesSpider(scrapy.Spider):
     allowed_domains = ['xcom-shop.ru']
     base_url_xcom_shop_ru = "https://www.xcom-shop.ru"
     download_delay = random.uniform(2, 5)
-    proxy = {'proxy':'https://168.119.247.195:8888'}
+    proxy = {'proxy':'https://?.?.?.?:?'}
     product_details_table_dict = {}
     
 #    def start_requests(self):
@@ -31,7 +31,7 @@ class QuotesSpider(scrapy.Spider):
             joinurl = urljoin(self.base_url_xcom_shop_ru, url)
             print(f"{joinurl=}")
             try:
-                yield scrapy.Request(joinurl, meta={"proxy": 'https://168.119.247.195:8888'}, callback=self.get_url__with_products)
+                yield scrapy.Request(joinurl, meta={"proxy": 'https://?.?.?.?:?'}, callback=self.get_url__with_products)
             except Exception as e:
                 print(f"Exception get_subcategories_2 {e}")
 
@@ -117,7 +117,7 @@ class QuotesSpider(scrapy.Spider):
             joinurl = urljoin(self.base_url_xcom_shop_ru, url)
             print(f"{joinurl=}")
             try:
-                yield scrapy.Request(joinurl, meta={"proxy": 'https://168.119.247.195:8888'}, callback=self.get_url__with_products)
+                yield scrapy.Request(joinurl, meta={"proxy": 'https://?.?.?.?:?'}, callback=self.get_url__with_products)
             except Exception as e:
                 print(f"Exception get_subcategories_2 {e}")
 
